@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingLeft="@dimen/item_padding"
+    android:paddingRight="@dimen/item_padding"
+    android:paddingEnd="@dimen/item_padding"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/section_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Politica"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Palestine Main Articles"
+        android:maxLines="3"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:layout_gravity="end"
+        android:text="2017-07-07"
+        android:textSize="8sp" />
+</LinearLayout>

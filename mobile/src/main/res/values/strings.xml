@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">International Palestine News</string>
+    <string name="no_internet_connection">No Connection</string>
+    <string name="no_news">No News To View</string>
+</resources>
