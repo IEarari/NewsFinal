@@ -22,7 +22,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     public static final String LOG_TAG = NewsActivity.class.getName();
 
-    private static final String GUARDIAN_LINK_URL = "http://content.guardianapis.com/search?order-by=newest&q=Palestine&api-key=test";
+    private static final String GUARDIAN_LINK_URL = "http://content.guardianapis.com/search?order-by=newest&q=Palestine&show-tags=contributor&api-key=test";
 
     private static final int Loading_NEWS_ID = 1;
 
@@ -83,7 +83,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
 
-        mEmptyStateTextView.setText(getString(R.string.no_news));
+        mEmptyStateTextView.setText(getString(R.string.no_internet_connection));
 
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
