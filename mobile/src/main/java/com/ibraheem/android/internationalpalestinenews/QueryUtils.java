@@ -49,11 +49,10 @@ public class QueryUtils {
         try {
 
             JSONObject response = new JSONObject(newsJSON).getJSONObject("response");
-            JSONArray newsArray;
+            JSONArray newsArray, tags;
             if (response.has("results")) {
                 newsArray = response.getJSONArray("results");
-                String title = "", sectionName = "", datePublished = "", url = "";
-
+                String title = "", sectionName = "", datePublished = "", url = "", author = "";
                 for (int i = 0; i < newsArray.length(); i++) {
                     if (newsArray.getJSONObject(i).has("webTitle"))
                         title = newsArray.getJSONObject(i).getString("webTitle");
@@ -67,7 +66,14 @@ public class QueryUtils {
                     if (newsArray.getJSONObject(i).has("webUrl"))
                         url = newsArray.getJSONObject(i).getString("webUrl");
 
-                    news.add(new News(title, sectionName, datePublished, url));
+                    JSONObject TT = newsArray.getJSONObject(i);
+                    if (TT.has("tags")) {
+                        tags = TT.getJSONArray("tags");
+                        if (tags.getJSONObject(0).has("webTitle")) {
+                            author = tags.getJSONObject(0).getString("webTitle");
+                        }
+                    }
+                    news.add(new News(title, sectionName, datePublished, url, author));
                 }
             } else {
                 Log.e(LOG_TAG, "No results available");
