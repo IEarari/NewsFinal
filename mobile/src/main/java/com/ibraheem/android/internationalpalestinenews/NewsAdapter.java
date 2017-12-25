@@ -31,6 +31,9 @@ public class NewsAdapter extends ArrayAdapter<News> {
         TextView sectionNameView = (TextView) convertView.findViewById(R.id.section_name);
         sectionNameView.setText(currentNews.getselezionenome());
 
+        TextView Author = (TextView) convertView.findViewById(R.id.author);
+        Author.setText(currentNews.getAuthorName());
+
         TextView datePublishedView = (TextView) convertView.findViewById(R.id.data);
         datePublishedView.setText(formatDate(currentNews.getdatapubblicata()));
 
