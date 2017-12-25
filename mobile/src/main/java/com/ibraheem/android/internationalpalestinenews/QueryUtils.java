@@ -69,7 +69,7 @@ public class QueryUtils {
                     JSONObject TT = newsArray.getJSONObject(i);
                     if (TT.has("tags")) {
                         tags = TT.getJSONArray("tags");
-                        if (tags.getJSONObject(0).has("webTitle")) {
+                        if (tags.length()>0&&tags.getJSONObject(0).has("webTitle")) {
                             author = tags.getJSONObject(0).getString("webTitle");
                         }
                     }
