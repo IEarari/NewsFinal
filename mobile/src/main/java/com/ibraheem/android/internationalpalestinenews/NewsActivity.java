@@ -83,7 +83,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
 
-        mEmptyStateTextView.setText(getString(R.string.no_internet_connection));
+        mEmptyStateTextView.setText(getString(R.string.no_news));
 
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
